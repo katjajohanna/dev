@@ -3,8 +3,7 @@
 <body>
 
 <?php
-$mysqli = new mysqli("localhost", "dbuser", "dbuser", "stuff");
-
+include_once("dbopen.php");
 if (isset($_POST["submit"])) {
 	$bin_string = file_get_contents($_FILES["file"]["tmp_name"]);
     $hex_string = base64_encode($bin_string);

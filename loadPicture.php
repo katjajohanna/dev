@@ -1,5 +1,5 @@
 <?php
-$mysqli = new mysqli("localhost", "dbuser", "dbuser", "stuff");
+include_once("dbopen.php");
 $result = $mysqli->query("SELECT * FROM picture WHERE id = " . addslashes($_GET["id"]) . ";");
 while ($row = $result->fetch_assoc()) {
 	$bin = base64_decode($row["picture"]);
